@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      <% @courses.each do |c|%>
+          An attachment  <span><%= c.title %></span> was uploaded in Moodle ~
+          <br>
+      <% end %>
+    </p>
+  </body>
+</html>
+
+<style media="screen">
+  p{
+    font-size: 16px
+  }
+
+span{
+
+  background-color: #fff600;
+}
+</style>
