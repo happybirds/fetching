@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      <% @notices.each do |c|%>
+          A new Announcement -- <span><%= c.title %></span> 
+          <br>
+      <% end %>
+    </p>
+  </body>
+</html>
+
+<style media="screen">
+  p{
+    font-size: 16px
+  }
+
+span{
+
+  background-color: #fff600;
+}
+</style>

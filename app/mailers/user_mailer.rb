@@ -15,4 +15,12 @@ class UserMailer < ApplicationMailer
 
     mail(to: ENV['MAIL_TO'], subject: "#{@subject}-#{Date.today}")
   end
+
+  def notice_email(campus,subject)
+   @notices = campus
+   @subject = subject
+
+   mail(to: ENV['MAIL_TO'], subject: "#{@subject}-#{Date.today}")
+ end
+
 end

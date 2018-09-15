@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_003301) do
+ActiveRecord::Schema.define(version: 2018_09_15_231227) do
 
   create_table "campus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_uri"
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 2018_09_15_003301) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_crono_jobs_on_job_id", unique: true
+  end
+
+  create_table "notices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

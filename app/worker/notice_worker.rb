@@ -1,16 +1,9 @@
-class ListsController < ApplicationController
-	def index
-		mechanize = Mechanize.new
-		page = mechanize.get(ENV['TRAN'])
-		n = page.at('p')
-		@notice = n.text.strip if !n.nil?
-		@schedules = Schedule.all
-		@a = 'black'
-	end
+class NoticeWorker
+  include Sidekiq::Worker
+  sidekiq_options queue: 'notice'
 
-
-	def my
-		mechanize = Mechanize.new
+  def perform(name)
+    mechanize = Mechanize.new
     #
     page = mechanize.post(ENV['M_URI'])
 
@@ -44,6 +37,6 @@ class ListsController < ApplicationController
     			UserMailer.notice_email(@notices,'Announcements').deliver
     			@notices.update(status: 1)
     	end
+  end
 
-end
 end

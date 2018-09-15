@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
 	root 'lists#index'
 	get 'my' => 'lists#my'
-   	get 'campus'=> 'lists#campus'
+   
 end
