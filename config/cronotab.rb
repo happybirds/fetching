@@ -15,5 +15,7 @@
 #
 
 #
-Crono.perform(CourseJob).every 5.minutes
+Crono.perform(CourseJob).every 1.hours
+
+Crono.perform(CampuJob).every 5.minutes
 

@@ -3,7 +3,7 @@ class CourseWorker
   sidekiq_options queue: 'course'
 
   def perform(name)
-    p Time.now.strftime('%H').to_i
+  
     if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 22
       mechanize = Mechanize.new
 

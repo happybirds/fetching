@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+
+    <% @campus.each do |c|%>
+         <div class="view-row">
+
+            <div class="photo">
+              <% if c.image_uri != 0%>
+                <img src="<%= c.image_uri%>" alt="">
+              <% end %>
+            </div>
+            <div class="main">
+              <div class="title">
+                <a href="<%= c.title_uri%>"><%= c.title%></a>
+              </div>
+              <div class="notice-date"><%= c.send_time%></div>
+              <div class="content"><%= c.content%>
+              </div>
+            </div>
+          
+
+          </div>
+          <hr>
+    <% end %>
+
+   
+  </body>
+</html>
+
+<style>
+  
+.view-row{
+  display: flex;
+  margin: 20px
+
+}
+/*.photo{
+  width: 300px;
+  height: 100px;
+}*/
+
+.main{
+  display: flex;
+  flex-direction: column;
+  padding: 10px
+}
+
+</style>
