@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 	mount Sidekiq::Web => '/sidekiq'
 
 	root 'lists#index'
-	get 'my' => 'lists#my'
-   
+
+
 end
