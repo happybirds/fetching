@@ -9,6 +9,3 @@ class ListsController < ApplicationController
 	end
 
 end
-
-
-end
