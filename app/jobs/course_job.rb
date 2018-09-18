@@ -1,7 +1,8 @@
 class CourseJob
 
   def perform
-       if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 22
+        ms = ['Mon','Tue','Wed',"Thu",'Fri']
+       if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 23 && ms.include?(Date.today.strftime("%a"))
       mechanize = Mechanize.new
 
       page = mechanize.post(ENV['U_URI'])

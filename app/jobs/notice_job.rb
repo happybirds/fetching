@@ -1,6 +1,9 @@
 class NoticeJob
 
   def perform
+      ms = ['Mon','Tue','Wed',"Thu",'Fri']
+    if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 24 && ms.include?(Date.today.strftime("%a"))
+    
      mechanize = Mechanize.new
     #
     page = mechanize.post(ENV['M_URI'])
@@ -36,5 +39,6 @@ class NoticeJob
     			@notices.update(status: 1)
     	end
   end
+end
 
 end
