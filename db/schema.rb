@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_231227) do
+ActiveRecord::Schema.define(version: 2018_10_10_001853) do
 
   create_table "campus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image_uri"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 2018_09_15_231227) do
     t.string "send_time"
     t.text "content", limit: 4294967295
     t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "card_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "card_id"
+    t.text "content", limit: 4294967295
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "href"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

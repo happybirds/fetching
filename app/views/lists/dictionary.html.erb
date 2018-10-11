@@ -1,0 +1,72 @@
+<div class="main">
+
+
+<% CardInfo.where(id: 11061).each do |c|%>
+
+<% c.content.split(/\r\n/).each do |s| %>
+
+<div>
+  <%= raw s%>
+</div>
+
+
+
+
+<% end %>
+
+
+<% end %>
+
+</div>
+
+
+<style media="screen">
+.main{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+}
+
+div{
+  color: #5a348b;
+  font-size: 18px;
+  font-weight: bold;
+margin-top: 10px;
+
+}
+
+.Indicateur{
+  color: #016a18;
+  font-weight: normal;
+  font-size: 15px;
+  margin-left: 5px;
+
+}
+
+.CategorieGrammaticale{
+  margin-top: 20px;
+  color: #e02d43;
+  font-size: 15px;
+
+
+}
+  .Traduction {
+    color: #1d1d1d;
+    font-weight: bold;
+font-size: 18px;
+}
+.Traduction2 {
+    color: #1d1d1d;
+    font-weight: normal;
+font-size: 18px;
+}
+.Locution2 {
+font-size: 15px;
+    color: #5a348b;
+    display: flex;
+
+}
+
+
+</style>

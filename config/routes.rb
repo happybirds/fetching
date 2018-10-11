@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
 	root 'lists#index'
 
-
+	get '/dictionary' => 'lists#dictionary'
+	get '/save_dir' => 'lists#save_dir'
 end
