@@ -21,19 +21,19 @@ class CourseJob
       cs_ay =[]
       math_ay=[]
 
-      bio = dashboard.link_with(text: '2018F Current Issues Enviro. Biology (BIO-1010-1)').click
+      bio = dashboard.link_with(text: '2019W CS-1610-1').click
 
       bio.search('.instancename').each do |i|
          bio_ay.push(i.text.strip)
       end
 
-      cs = dashboard.link_with(text: '2018F Computer Science I (CS-1910-2)').click
+      cs = dashboard.link_with(text: '2019W CS-1920-2').click
 
       cs.search('.instancename').each do |i|
         cs_ay.push(i.text.strip)
       end
 
-      math = dashboard.link_with(text: '2018F Combinatorics I (MATH-2420-1)').click
+      math = dashboard.link_with(text: '2019W CS-2520-1').click
 
       math.search('.instancename').each do |i|
         math_ay.push(i.text.strip)
@@ -72,8 +72,8 @@ class CourseJob
 
 
       if Course.where(catalog: 1,status: 2).count > 0
-          @courses = Course.where(catalog: 1,status: 2)
-          UserMailer.sample_email(@courses,'Combinatorics I (MATH-2420-1)').deliver
+          @courses = Course.where(catalog: 3,status: 2)
+          UserMailer.sample_email(@courses,'2019W Digital Systems (CS-1610-1)').deliver
           @courses.update(status: 1)
       end
 
@@ -84,14 +84,14 @@ class CourseJob
       # end
 
       if Course.where(catalog: 3,status: 2).count > 0
-          @courses = Course.where(catalog: 3,status: 2)
-          UserMailer.sample_email(@courses,'Current Issues Enviro. Biology (BIO-1010-1)').deliver
+          @courses = Course.where(catalog: 4,status: 2)
+          UserMailer.sample_email(@courses,'2019W Computer Science II (CS-1920-2)').deliver
           @courses.update(status: 1)
       end
 
       if Course.where(catalog: 4,status: 2).count > 0
-          @courses = Course.where(catalog: 4,status: 2)
-          UserMailer.sample_email(@courses,'Computer Science I (CS-1910-2)').deliver
+          @courses = Course.where(catalog: 1,status: 2)
+          UserMailer.sample_email(@courses,'2019W Computer Org. and Architecture (CS-2520-1)').deliver
           @courses.update(status: 1)
       end
     end
