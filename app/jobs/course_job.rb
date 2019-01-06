@@ -2,7 +2,7 @@ class CourseJob
 
   def perform
         ms = ['Mon','Tue','Wed',"Thu",'Fri']
-       if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 23 && ms.include?(Date.today.strftime("%a"))
+       if Time.now.strftime('%H').to_i > 7 && Time.now.strftime('%H').to_i < 23
       mechanize = Mechanize.new
 
       page = mechanize.post(ENV['U_URI'])
@@ -21,19 +21,19 @@ class CourseJob
       cs_ay =[]
       math_ay=[]
 
-      bio = dashboard.link_with(text: '2019W CS-1610-1').click
+      bio = dashboard.link_with(text: '2019W Digital Systems (CS-1610-1)').click
 
       bio.search('.instancename').each do |i|
          bio_ay.push(i.text.strip)
       end
 
-      cs = dashboard.link_with(text: '2019W CS-1920-2').click
+      cs = dashboard.link_with(text: '2019W Computer Science II (CS-1920-2)').click
 
       cs.search('.instancename').each do |i|
         cs_ay.push(i.text.strip)
       end
 
-      math = dashboard.link_with(text: '2019W CS-2520-1').click
+      math = dashboard.link_with(text: '2019W Computer Org. and Architecture (CS-2520-1)').click
 
       math.search('.instancename').each do |i|
         math_ay.push(i.text.strip)
