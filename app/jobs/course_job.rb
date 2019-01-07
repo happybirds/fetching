@@ -72,7 +72,7 @@ class CourseJob
 
 
       if Course.where(catalog: 1,status: 2).count > 0
-          @courses = Course.where(catalog: 3,status: 2)
+          @courses = Course.where(catalog: 1,status: 2)
           UserMailer.sample_email(@courses,'2019W Digital Systems (CS-1610-1)').deliver
           @courses.update(status: 1)
       end
@@ -84,13 +84,13 @@ class CourseJob
       # end
 
       if Course.where(catalog: 3,status: 2).count > 0
-          @courses = Course.where(catalog: 4,status: 2)
+          @courses = Course.where(catalog: 3,status: 2)
           UserMailer.sample_email(@courses,'2019W Computer Science II (CS-1920-2)').deliver
           @courses.update(status: 1)
       end
 
       if Course.where(catalog: 4,status: 2).count > 0
-          @courses = Course.where(catalog: 1,status: 2)
+          @courses = Course.where(catalog: 4,status: 2)
           UserMailer.sample_email(@courses,'2019W Computer Org. and Architecture (CS-2520-1)').deliver
           @courses.update(status: 1)
       end
