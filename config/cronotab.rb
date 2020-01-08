@@ -15,12 +15,12 @@
 #
 
 #
-Crono.perform(CourseJob).every 1.hours
+Crono.perform(CourseJob).every 2.minutes
 
-Crono.perform(CampuJob).every 1.days, at: '19:00'
+# Crono.perform(CampuJob).every 1.days, at: '19:00'
 
-Crono.perform(NoticeJob).every 1.days, at: '19:00'
+# Crono.perform(NoticeJob).every 1.days, at: '19:00'
 
-Crono.perform(ClearCronlogJob).every 1.days, at: '20:00'
+# Crono.perform(ClearCronlogJob).every 1.days, at: '20:00'
 
 

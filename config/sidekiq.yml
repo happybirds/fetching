@@ -1,4 +1,4 @@
-:concurrency: 5
+:concurrency: 10
 :pidfile: tmp/pids/sidekiq.pid
 staging:
   :concurrency: 10
@@ -8,4 +8,8 @@ production:
   - course
   - campu
   - notice
-  - other
+  - notice5
+  - notice1
+  - notice2
+  - notice3
+  - notice4
